@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Sphere, Torus, Box } from '@react-three/drei';
-import { Download, Github, Linkedin, Mail, ArrowDown, Sparkles, Code, Monitor, Palette, Zap } from 'lucide-react';
+import { Download, Github, Linkedin, Mail, ArrowDown, Sparkles, Code, Monitor, Palette, Zap, Eye } from 'lucide-react';
 import * as THREE from 'three';
 
 // 3D Floating Elements Component
@@ -161,25 +161,48 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16"
+          className="flex flex-col items-center gap-4 mb-16"
         >
-          <motion.button
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="button-primary group"
+          {/* Modern Resume Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="flex flex-col sm:flex-row items-center gap-4"
           >
-            <Download className="w-5 h-5 mr-2 group-hover:animate-bounce-gentle" />
-            <span>Download Resume</span>
-          </motion.button>
-          
-          <motion.button
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="button-secondary group"
-          >
-            <span>View Projects</span>
-            <ArrowDown className="w-5 h-5 ml-2 group-hover:animate-bounce-gentle" />
-          </motion.button>
+            {/* View Resume Button */}
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => window.open('/PUGAZHENTHI-Resume.pdf', '_blank')}
+              className="px-8 py-4 bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold rounded-2xl shadow-glow hover:shadow-glow-lg transition-all duration-300 flex items-center gap-3 group backdrop-blur-sm border border-primary-400/30"
+            >
+              <div className="w-6 h-6 bg-white/20 rounded-lg flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
+                <Eye className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-lg">View Resume</span>
+            </motion.button>
+            
+            {/* Download Resume Button */}
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/PUGAZHENTHI-Resume.pdf';
+                link.download = 'Pugazhenthi-Raman-Resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+              className="px-8 py-4 bg-gradient-to-r from-slate-800/90 to-slate-700/90 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 group backdrop-blur-sm border border-slate-600/30 hover:border-primary-400/50"
+            >
+              <div className="w-6 h-6 bg-primary-500/20 rounded-lg flex items-center justify-center group-hover:bg-primary-500/30 transition-all duration-300">
+                <Download className="w-4 h-4 text-primary-400 group-hover:text-primary-300" />
+              </div>
+              <span className="text-lg">Download Resume</span>
+            </motion.button>
+          </motion.div>
         </motion.div>
 
         {/* Social Links */}

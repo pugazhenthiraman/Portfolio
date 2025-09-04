@@ -60,12 +60,12 @@ const Skills: React.FC = () => {
       { name: 'JavaScript', level: 92, icon: '📜', color: 'from-primary-500 to-accent-500', category: 'frontend' }
     ],
     backend: [
-      { name: 'Node.js', level: 60, icon: '🟢', color: 'from-green-500 to-emerald-500', category: 'backend' },
-      { name: 'Express.js', level: 55, icon: '🚂', color: 'from-green-500 to-emerald-500', category: 'backend' },
-      { name: 'MongoDB', level: 50, icon: '🍃', color: 'from-green-500 to-emerald-500', category: 'backend' },
-      { name: 'PostgreSQL', level: 60, icon: '🐘', color: 'from-green-500 to-emerald-500', category: 'backend' },
-      { name: 'REST APIs', level: 80, icon: '🔌', color: 'from-green-500 to-emerald-500', category: 'backend' },
-      { name: 'Prisma', level: 70, icon: '🗄️', color: 'from-green-500 to-emerald-500', category: 'backend' }
+      { name: 'Node.js', level: 85, icon: '🟢', color: 'from-green-500 to-emerald-500', category: 'backend' },
+      { name: 'Express.js', level: 80, icon: '🚂', color: 'from-green-500 to-emerald-500', category: 'backend' },
+      { name: 'MongoDB', level: 75, icon: '🍃', color: 'from-green-500 to-emerald-500', category: 'backend' },
+      { name: 'PostgreSQL', level: 70, icon: '🐘', color: 'from-green-500 to-emerald-500', category: 'backend' },
+      { name: 'REST APIs', level: 85, icon: '🔌', color: 'from-green-500 to-emerald-500', category: 'backend' },
+      { name: 'Prisma', level: 75, icon: '🗄️', color: 'from-green-500 to-emerald-500', category: 'backend' }
     ],
     design: [
       { name: 'UI Design', level: 90, icon: '🎨', color: 'from-accent-500 to-pink-500', category: 'design' },

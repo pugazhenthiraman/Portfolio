@@ -369,35 +369,6 @@ const About: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* View My Work Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => {
-              const element = document.getElementById('projects');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-            className="px-8 py-4 bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold rounded-2xl shadow-glow hover:shadow-glow-lg transition-all duration-300 flex items-center gap-3 mx-auto group"
-          >
-            <span className="text-lg">View My Work</span>
-            <motion.div
-              whileHover={{ x: 5 }}
-              transition={{ duration: 0.3 }}
-            >
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </motion.div>
-          </motion.button>
-        </motion.div>
-
         {/* Education & Info Cards */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -517,24 +488,6 @@ const About: React.FC = () => {
             Every project is an opportunity to learn, grow, and push the boundaries of what's possible on the web.
             I leverage AI tools to enhance productivity and deliver exceptional results faster.
           </p>
-        </motion.div>
-
-        {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mt-16"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-500 to-accent-500 text-white rounded-2xl font-semibold text-lg shadow-glow hover:shadow-glow-lg transition-all duration-300"
-          >
-            <span>View My Work</span>
-            <ArrowRight className="w-5 h-5" />
-          </motion.button>
         </motion.div>
       </div>
     </section>
