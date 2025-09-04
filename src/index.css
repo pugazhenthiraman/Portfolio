@@ -14,6 +14,24 @@
     color: #fafaf9;
     overflow-x: hidden;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    cursor: default;
+  }
+
+  /* Enhanced cursor interactions */
+  a, button, [role="button"] {
+    cursor: pointer !important;
+  }
+
+  .btn-primary, .btn-secondary {
+    cursor: pointer !important;
+  }
+
+  .btn-primary:hover, .btn-secondary:hover {
+    cursor: pointer !important;
+  }
+
+  .btn-primary:active, .btn-secondary:active {
+    cursor: pointer !important;
   }
 
   /* Custom scrollbar */

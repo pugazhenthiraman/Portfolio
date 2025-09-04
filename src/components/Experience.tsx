@@ -285,6 +285,14 @@ const Experience: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/PUGAZHENTHI-Resume.pdf';
+                  link.download = 'PUGAZHENTHI-Resume.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-500 to-accent-500 text-white rounded-2xl font-semibold shadow-glow hover:shadow-glow-lg transition-all duration-300"
               >
                 <span>Download PDF</span>
