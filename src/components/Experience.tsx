@@ -65,10 +65,10 @@ const Experience: React.FC = () => {
   ];
 
   const stats = [
-    { label: "Years Experience", value: "3+", icon: "📅" },
-    { label: "Projects Completed", value: "50+", icon: "🚀" },
-    { label: "Happy Clients", value: "25+", icon: "😊" },
-    { label: "Technologies Mastered", value: "10+", icon: "🛠️" }
+    { label: "Years Experience", value: "1+", icon: "📅" },
+    { label: "Projects Completed", value: "5+", icon: "🚀" },
+    { label: "Happy Clients", value: "5+", icon: "😊" },
+    { label: "Technologies Mastered", value: "3+", icon: "🛠️" }
   ];
 
   return (

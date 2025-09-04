@@ -51,93 +51,46 @@ const HomePage: React.FC = () => {
   }, [handleScroll]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-dark-950 via-dark-900 to-dark-800 relative overflow-hidden">
-      {/* Modern Background Effects */}
-      <div className="fixed inset-0 bg-gradient-mesh opacity-15 pointer-events-none" />
-      <div className="fixed inset-0 bg-gradient-radial pointer-events-none" />
+    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 relative">
+      {/* Clean Professional Background */}
+      <motion.div 
+        className="fixed inset-0 bg-gradient-to-br from-primary-500/5 via-transparent to-accent-500/5 pointer-events-none"
+        animate={{
+          opacity: [0.5, 0.8, 0.5],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
       
-      {/* Floating Particles */}
+      {/* Subtle Texture */}
+      <div className="fixed inset-0 opacity-[0.015] pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(245,158,11,0.1)_0%,transparent_50%)]" />
+      </div>
+
+      {/* Minimal Floating Elements */}
       <div className="fixed inset-0 pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.3, 1, 0.3],
-              scale: [0.5, 1, 0.5],
-            }}
-            transition={{
-              duration: Math.random() * 3 + 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Animated Grid Lines */}
-      <div className="fixed inset-0 pointer-events-none opacity-10">
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_50%,rgba(255,255,255,0.1)_50%),linear-gradient(0deg,transparent_50%,rgba(255,255,255,0.1)_50%)] bg-[length:50px_50px]" />
-      </div>
-
-      {/* Floating Orbs */}
-      <div className="fixed inset-0 pointer-events-none">
-        {[...Array(3)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-96 h-96 rounded-full"
-            style={{
-              left: `${20 + i * 30}%`,
-              top: `${10 + i * 20}%`,
-              background: `radial-gradient(circle, rgba(${100 + i * 50}, ${150 + i * 30}, 255, 0.1) 0%, transparent 70%)`,
-            }}
-            animate={{
-              x: [0, 50, 0],
-              y: [0, -30, 0],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 8 + i * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 2,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Code Rain with Modern Elements */}
-      <div className="fixed inset-0 pointer-events-none opacity-5">
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute top-0 text-primary-400 font-mono text-sm"
+            className="absolute w-1 h-1 bg-primary-400/20 rounded-full"
             style={{
-              left: `${15 + i * 15}%`,
+              left: `${20 + i * 15}%`,
+              top: `${20 + i * 10}%`,
             }}
             animate={{
-              y: [0, window.innerHeight],
-              opacity: [0, 1, 0],
+              y: [0, -30, 0],
+              opacity: [0.2, 0.5, 0.2],
             }}
             transition={{
-              duration: Math.random() * 5 + 8,
+              duration: 6 + i,
               repeat: Infinity,
-              ease: "linear",
-              delay: Math.random() * 5,
+              ease: "easeInOut",
+              delay: i * 0.5,
             }}
-          >
-            {['<div>', '</div>', 'const', 'let', 'function', 'return', '=>', '{}', '[]', '()'].map((char, j) => (
-              <div key={j} className="mb-2 opacity-60 hover:opacity-100 transition-opacity duration-300">
-                {char}
-              </div>
-            ))}
-          </motion.div>
+          />
         ))}
       </div>
       
@@ -145,13 +98,13 @@ const HomePage: React.FC = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.3 }}
           className="relative z-10"
         >
           <Navbar currentSection={currentSection} />
           <ScrollProgress />
           
-          <main className="relative pt-20 sm:pt-24 lg:pt-32">
+          <main className="relative">
             <Hero />
             <About />
             <Skills />
@@ -163,7 +116,6 @@ const HomePage: React.FC = () => {
           
           <Footer />
           <FloatingActions />
-          <CursorTrail />
         </motion.div>
       </AnimatePresence>
     </div>
@@ -173,19 +125,18 @@ const HomePage: React.FC = () => {
 // About Page Component
 const AboutPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-dark-950 via-dark-900 to-dark-800 relative overflow-hidden">
-      <div className="fixed inset-0 bg-gradient-mesh opacity-20 pointer-events-none" />
-      <div className="fixed inset-0 bg-gradient-radial pointer-events-none" />
+    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 relative">
+      <div className="fixed inset-0 bg-gradient-to-br from-primary-500/5 via-transparent to-accent-500/5 pointer-events-none" />
       
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.3 }}
         className="relative z-10"
       >
         <Navbar currentSection="about" />
         
-        <main className="relative pt-16 sm:pt-20 lg:pt-24">
+        <main className="relative pt-20">
           <About />
         </main>
         
@@ -198,19 +149,18 @@ const AboutPage: React.FC = () => {
 // Projects Page Component
 const ProjectsPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-dark-950 via-dark-900 to-dark-800 relative overflow-hidden">
-      <div className="fixed inset-0 bg-gradient-mesh opacity-20 pointer-events-none" />
-      <div className="fixed inset-0 bg-gradient-radial pointer-events-none" />
+    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 relative">
+      <div className="fixed inset-0 bg-gradient-to-br from-primary-500/5 via-transparent to-accent-500/5 pointer-events-none" />
       
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.3 }}
         className="relative z-10"
       >
         <Navbar currentSection="projects" />
         
-        <main className="relative pt-16 sm:pt-20 lg:pt-24">
+        <main className="relative pt-20">
           <Projects />
         </main>
         
@@ -223,19 +173,18 @@ const ProjectsPage: React.FC = () => {
 // Contact Page Component
 const ContactPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-dark-950 via-dark-900 to-dark-800 relative overflow-hidden">
-      <div className="fixed inset-0 bg-gradient-mesh opacity-20 pointer-events-none" />
-      <div className="fixed inset-0 bg-gradient-radial pointer-events-none" />
+    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 relative">
+      <div className="fixed inset-0 bg-gradient-to-br from-primary-500/5 via-transparent to-accent-500/5 pointer-events-none" />
       
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.3 }}
         className="relative z-10"
       >
         <Navbar currentSection="contact" />
         
-        <main className="relative pt-16 sm:pt-20 lg:pt-24">
+        <main className="relative pt-20">
           <Contact />
         </main>
         
