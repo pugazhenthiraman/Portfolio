@@ -26,7 +26,7 @@ const BreadcrumbNav: React.FC = () => {
   }, []);
 
   const getBreadcrumbItems = () => {
-    const items = [
+    const items: Array<{ label: string; section: string; icon?: React.ComponentType<any> | null }> = [
       { label: 'Home', section: 'home', icon: Home }
     ];
 
